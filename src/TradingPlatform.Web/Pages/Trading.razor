@@ -1,0 +1,38 @@
+@page "/trading"
+@attribute [Authorize]
+@inject ITradingService TradingService
+@inject NavigationManager Navigation
+
+<div class="trading-container">
+    <div class="market-data">
+        <MarketDataView Symbol="@SelectedSymbol" />
+    </div>
+    
+    <div class="order-entry">
+        <OrderEntry 
+            Symbol="@SelectedSymbol"
+            OnOrderPlaced="HandleOrderPlaced" />
+    </div>
+    
+    <div class="portfolio">
+        <PortfolioView />
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string SelectedSymbol { get; set; } = "AAPL";
+
+    private async Task HandleOrderPlaced(OrderRequest request)
+    {
+        try
+        {
+            await TradingService.PlaceOrderAsync(request);
+            // Refresh portfolio and orders
+        }
+        catch (Exception ex)
+        {
+            // Show error
+        }
+    }
+}
