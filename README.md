@@ -1,3 +1,5 @@
+[![LinkedIn][linkedin-shield]][linkedin-url-Bucsa]
+
 # .NET-Trading-Platform-Base-Application
 
 
@@ -330,3 +332,8 @@ jobs:
 | `/api/accounts/portfolios` | GET | Get user portfolios |
 | `/api/trading/orders` | POST | Place a new order |
 | `/api/trading/marketdata/{symbol}` | GET | Get market data for symbol |
+
+
+
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url-Bucsa]: https://www.linkedin.com/in/justin-bucsa
